@@ -25,4 +25,17 @@ describe('Esperas....', ()=> {
             .should('exist')
             .type('funciona')
     })
+    it.only('Uso do Find', () => {
+        cy.get('#buttonListDOM').click()
+        cy.get('#lista li')
+            .find('span')
+            .should('contain', 'Item 1')
+        cy.get('#lista li span')
+         // .find('span')
+            .should('contain', 'Item 2')    
+
+        
+          //  cy.get('#lista li span')
+         //   .should('contain', 'Item 2')    
+    })
 })
