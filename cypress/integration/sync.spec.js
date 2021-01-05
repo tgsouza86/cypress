@@ -57,4 +57,14 @@ describe('Esperas....', ()=> {
                 .click()
                 .should('have.value', '111')
     })
+
+    it.only('Should vs Then', () => {
+              
+        cy.get('#buttonListDOM').then($el => {
+           // console.log
+           expect($el).to.have.length(1)
+            cy.get('#buttonList')
+        })
+     ///So quem considera o return é o then              
+    })
 })
