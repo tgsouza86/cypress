@@ -16,4 +16,13 @@ describe('Work with iFrames', () => {
         })
 
     })
+
+    it('Deve testar o frame diretamente', () => {
+        cy.visit('https://wcaquino.me/cypress/frame.html')
+        cy.get('#otherButton').click()
+        cy.on('window:alert', msg => {
+            expect(msg).to.be.equal('Click OK!')
+        })
+
+    })
 })
